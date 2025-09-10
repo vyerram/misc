@@ -1,0 +1,44 @@
+{
+  "$schema": "https://quad.com/json/census/v1.0.0/census.schema.json",
+  "censusName": "Acme Health Census 2025",
+  "account": "Acme Group Inc",
+  "effectiveDate": "2025-01-01",
+  "producerRelationship": "AGENCY123",
+  "standardAgency": "Acme Agency",
+  "status": "active",
+  "segments": ["Medical", "Dental"],
+  "preferredAgency": "Preferred Acme Agency",
+  "annualAttestation": "ATTEST-001",
+  "size": "Large",
+  "totalEligible": 150,
+  "validWaivers": 10,
+  "waiversNoOther": 5,
+  "totalSubscribers": 120,
+  "totalSpouseEe": 40,
+  "totalMembers": 300,
+  "retireesEnrolled": 15,
+  "authorizations": 25,
+  "compliance": true,
+  "coveredEligible": 140,
+  "totalGroupParticipationPct": 85.5,
+  "retireeEnrollmentPct": 5.0,
+  "percentageAuthorization": 8.3,
+  "members": [
+    {
+      "memberId": "M001",
+      "firstName": "John",
+      "lastName": "Doe",
+      "dob": "1980-05-20",
+      "relationship": "Employee",
+      "coverage": "Medical"
+    },
+    {
+      "memberId": "M002",
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "dob": "1982-09-15",
+      "relationship": "Spouse",
+      "coverage": "Medical"
+    }
+  ]
+}

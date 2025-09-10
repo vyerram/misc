@@ -1,0 +1,41 @@
+name: Validate Changed Schemas
+on:
+  push:
+    branches: ["main", "develop"]
+  pull_request:
+    branches: ["main", "develop"]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Get changed files
+        id: changes
+        uses: tj-actions/changed-files@v45
+        with:
+          files: |
+            **/*.schema.json
+            **/*.yaml
+            **/*.yml
+
+      - name: Run validation
+        run: |
+          if [ -n "${{ steps.changes.outputs.all_changed_files }}" ]; then
+            echo "Changed schema files:"
+            echo "${{ steps.changes.outputs.all_changed_files }}"
+            python scripts/prepush.py ${{ steps.changes.outputs.all_changed_files }}
+          else
+            echo "No schema changes detected."
+          fi

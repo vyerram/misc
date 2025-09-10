@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://capbluecross.com/json/census/v1.0.0/census.schema.json",
+  "$anchor": "census",
+  "title": "Census",
+  "type": "object",
+  "additionalProperties": false,
+
+  "model": {
+    "$ref":"https://capbluecross.com/schemas/json/common/modelmetadata/v1.0.0/modelMetadata.schema.json",
+    "default": {
+      "canonical": "https://capbluecross.com/json/census",
+      "version": "1.0.0",
+      "metaVersion": 1,
+      "status": "draft"
+    }
+  },
+
+  "required": ["censusName", "status", "members"],
+
+  "properties": {
+    "censusName": {
+      "type": "string",
+      "maxLength": 80,
+      "description": "Census Name"
+    },
+    "account": {
+      "type": "string",
+      "description": "Group Name"
+    },
+    "effectiveDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Census Effective Date"
+    },
+    "producerRelationship": {
+      "type": "string",
+      "description": "ID to the Agency with visibility to the Census and Quote"
+    },
+    "standardAgency": {
+      "type": "string",
+      "description": "Agency Name with visibility to the Census and Quote"
+    },
+    "status": {
+      "type": "string",
+      "description": "Census Status",
+      "xSfRequired": true
+    },
+    "segments": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Available Segments (multi-select)"
+    },
+    "preferredAgency": {
+      "type": "string",
+      "description": "Preferred Agency Name with visibility to the Census and Quote"
+    },
+    "annualAttestation": {
+      "type": "string",
+      "description": "Id for the Attestation"
+    },
+    "size": {
+      "type": "string",
+      "description": "Agency size"
+    },
+    "totalEligible": {
+      "type": "number",
+      "description": "Total Eligible Health Plan people count"
+    },
+    "validWaivers": {
+      "type": "number",
+      "description": "Count of waivers"
+    },
+    "waiversNoOther": {
+      "type": "number",
+      "description": "Count of waivers with no other insurance"
+    },
+    "totalSubscribers": {
+      "type": "number",
+      "description": "Total subscribers"
+    },
+    "totalSpouseEe": {
+      "type": "number",
+      "description": "Total Employee plus spouse"
+    },
+    "totalMembers": {
+      "type": "number",
+      "description": "Total members"
+    },
+    "retireesEnrolled": {
+      "type": "number",
+      "description": "Total retirees"
+    },
+    "authorizations": {
+      "type": "number",
+      "description": "Total authorizations"
+    },
+    "compliance": {
+      "type": "boolean",
+      "description": "Compliance flag"
+    },
+    "coveredEligible": {
+      "type": "number",
+      "description": "Covered eligible (formula)"
+    },
+    "totalGroupParticipationPct": {
+      "type": "number",
+      "description": "Percentage of Total Group Participation"
+    },
+    "retireeEnrollmentPct": {
+      "type": "number",
+      "description": "Percentage of Retiree Enrollment"
+    },
+    "percentageAuthorization": {
+      "type": "number",
+      "description": "Percentage of Authorizations / Total Enrolled"
+    },
+
+    "members": {
+      "type": "array",
+      "description": "Census Member Object (1..n)",
+      "minItems": 1,
+      "items": {
+        "$ref": "https://capbluecross.com/json/censusMember/v1.0.0/censusMember.schema.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+"version": "2.0.0",
+"tasks": [
+{
+"label": "Validate All (pre-push)",
+"type": "shell",
+"command": "python scripts/prepush.py",
+"group": { "kind": "build", "isDefault": true }
+}
+]
+}
