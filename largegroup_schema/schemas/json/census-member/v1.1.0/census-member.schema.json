@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://capbluecross.com/json/census-member/v1.0.0/census-member.schema.json",
+  "$anchor": "census-member",
+  "title": "Census Member",
+  "type": "object",
+  "additionalProperties": true,
+
+  "properties": {
+    "model": {
+      "$ref": "https://capbluecross.com/json/common/modelMetadata/v1.0.0/modelMetadata.schema.json",
+      "default": {
+        "canonical": "https://capbluecross.com/json/census-member",
+        "version": "v1.0.0",
+        "metaVersion": 1,
+        "status": "draft",
+        "createdDate": "2025-09-09T00:00:00Z"
+      }
+    }
+  }
+}
