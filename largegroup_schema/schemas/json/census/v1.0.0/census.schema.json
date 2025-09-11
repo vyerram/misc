@@ -121,7 +121,7 @@
       "description": "Census Member Object (1..n)",
       "minItems": 1,
       "items": {
-        "$ref": "https://capbluecross.com/json/censusMember/v1.0.0/censusMember.schema.json"
+        "$ref": "https://capbluecross.com/json/census-member/v1.0.0/census-member.schema.json"
       }
     }
   }

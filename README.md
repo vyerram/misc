@@ -18,6 +18,10 @@ Large Group Schemas - Repository Guide
                 census-member/
                     v1.0.0/
                         census-member.schema.json
+        openapi/
+            census/
+                v1.0.0
+                    /census.openapi.yaml
         instances/
             json/
                 account

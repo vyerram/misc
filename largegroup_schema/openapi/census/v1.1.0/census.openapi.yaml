@@ -1,0 +1,35 @@
+openapi: 3.1.0
+info:
+  title: Census API
+  version: v1.1.0
+  description: >
+    API for managing Census resources. The Census schema conforms to
+    JSON Schema Draft 2020-12 and includes members.
+
+servers:
+  - url: https://api.capbluecross.com
+
+paths:
+  /censuses/{id}:
+    get:
+      summary: Get a census by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Census found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Census"
+        "404":
+          description: Census record not found
+
+components:
+  schemas:
+    Census:
+      $ref: "https://capbluecross.com/json/census/v1.0.0/census.schema.json"
